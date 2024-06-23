@@ -5,6 +5,7 @@ export default function Intro({ setUsernameTiktok, setPanel }: any) {
       <input
         type="text"
         className="border outline-none rounded-md p-2 my-1"
+        placeholder="Tanpa @"
         onChange={(e) => setUsernameTiktok(e.target.value)}
       ></input>
       <button
