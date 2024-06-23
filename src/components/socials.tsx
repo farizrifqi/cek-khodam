@@ -12,7 +12,7 @@ export function Social() {
         sosokidola
       </a>
       <a
-        href="https://instagram.com/@frz.ra"
+        href="https://instagram.com/frz.ra"
         className="flex flex-row items-center gap-0.5 hover:text-red-100 transition-colors"
         target="_blank"
       >
@@ -20,7 +20,7 @@ export function Social() {
         frz.ra
       </a>
       <a
-        href="https://twitter.com/@zeranel"
+        href="https://twitter.com/zeranel"
         className="flex flex-row items-center gap-0.5 hover:text-red-100 transition-colors"
         target="_blank"
       >
