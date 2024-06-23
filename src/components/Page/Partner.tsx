@@ -67,18 +67,31 @@ export default function PartnerPage() {
         <div className="flex flex-row items-center px-3 py-1 border rounded-md my-2 gap-3">
           <div className="flex flex-row gap-0.5 items-center">
             <Icon icon="mingcute:love-fill" className="text-xl" />
-            <CountUpAnimation
-              initialValue={0}
-              targetValue={partnerData.match}
-            />
+
+            {partnerData.match == 0 ? (
+              "0"
+            ) : (
+              <CountUpAnimation
+                initialValue={0}
+                targetValue={partnerData.match}
+              />
+            )}
           </div>
           <div className="flex flex-row gap-0.5 items-center">
             <Icon icon="material-symbols:male" />
-            <CountUpAnimation initialValue={0} targetValue={partnerData.p} />
+            {partnerData.p == 0 ? (
+              "0"
+            ) : (
+              <CountUpAnimation initialValue={0} targetValue={partnerData.p} />
+            )}
           </div>
           <div className="flex flex-row gap-0.5 items-center">
             <Icon icon="material-symbols:female" />
-            <CountUpAnimation initialValue={0} targetValue={partnerData.w} />
+            {partnerData.w == 0 ? (
+              "0"
+            ) : (
+              <CountUpAnimation initialValue={0} targetValue={partnerData.w} />
+            )}
           </div>
         </div>
         <Social />
