@@ -2,6 +2,11 @@
 
 Cuma mengikuti trend cek kodam di tiktok. Menggunakan [NextJS](https://nextjs.org/) dan [TailwindCSS](https://tailwindcss.com/).
 
+Akses:
+
+- [khodam.farizrifqi.link](https://khodam.farizrifqi.link)
+- [cek-khodam-ivory.vercel.app](https://cek-khodam-ivory.vercel.app/)
+
 ## Instalasi:
 
 Langsung pencet deploy dibawah.
