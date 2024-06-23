@@ -3,8 +3,11 @@
 import { useEffect, useState } from "react";
 import kodam from "../lib/kodam.json";
 import { Social } from "@/components/socials";
-
-type resultKodam = {
+import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
+import ResultComponent from "@/components/result";
+import PanelKodam from "@/components/panel";
+import Intro from "@/components/intro";
+export type resultKhodam = {
   namaOrang?: string;
   kodam?: string;
   arti?: string;
@@ -32,7 +35,7 @@ export default function Home() {
   const [mencariKodam, setMencariKodam] = useState("");
   const [phase, setPhase] = useState(-1);
   const [usernameTiktok, setUsernameTiktok] = useState("");
-  const [result, setResult] = useState({} as resultKodam);
+  const [result, setResult] = useState({} as resultKhodam);
   const [panel, setPanel] = useState(false);
 
   useEffect(() => {
@@ -65,10 +68,10 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen min-h-screen flex-col items-center justify-center py-10">
+    <main className="flex h-screen min-h-screen flex-col items-center justify-center py-10 backdrop-blur-md">
       {panel ? (
-        <div className="h-full max-h-screen items-center justify-around flex flex-col">
-          <div className="font-extrabold text-center text-2xl lg:text-4xl w-full flex flex-col animate-pulse items-center justify-center text-white">
+        <div className="h-3/4 max-h-screen items-center justify-center flex flex-col ">
+          <div className="font-extrabold text-center text-2xl lg:text-4xl w-full flex flex-col animate-pulse items-center justify-center text-white my-10">
             <div className="items-center flex flex-row">
               <svg
                 viewBox="0 0 448 512"
@@ -82,65 +85,36 @@ export default function Home() {
               {usernameTiktok}
             </div>
           </div>
-          <div className="flex flex-col items-center gap-6">
-            <h1 className="lg:text-6xl text-3xl font-extrabold text-red-800 uppercase caveat-brush-regular">
-              Cek Khodam
-            </h1>
-            <p className="text-center lg:text-xl font-semibold">
-              Masukkan nama untuk mengecek Khodam
-            </p>
-            <input
-              value={nama}
-              type="text"
-              className="font-semibold tracking-wider bg-opacity-20 bg-black border-2 border-red-800 rounded-lg focus:outline-none outline-none px-3 py-2 text-xl text-red-800 uppercase tracking-wider placeholder:text-black placeholder:text-opacity-40"
-              placeholder="Masukkan nama"
-              onChange={(e) => setNama(e.target.value)}
-            />
-            <button
-              onClick={cekKodam}
-              className="border px-2 py-1 bg-900 bg-red-900 transition-all hover:bg-red-950 text-red-500 rounded border-red-800 disabled:bg-red-950 disabled:cursor-not-allowed"
-              disabled={nama === ""}
-            >
-              Cek!!!
-            </button>
-          </div>
 
-          <div className="animate-bounce text-xl lg:text-3xl">
-            {mencariKodam}
-          </div>
+          {!result?.namaOrang && !mencariKodam && (
+            <>
+              <h1 className="text-5xl font-extrabold text-red-600 uppercase caveat-brush-regular my-5">
+                Cek Khodam
+              </h1>
+              <PanelKodam setNama={setNama} nama={nama} cekKodam={cekKodam} />
+            </>
+          )}
 
           <div
             className={`${
-              !result.namaOrang && "opacity-0"
-            } flex flex-col text-left self-start text-xl font-semibold border-4 border-black p-5 lg:w-[30vw] m-3 rounded uppercase gap-3`}
+              !mencariKodam && "hidden"
+            }  text-xl lg:text-3xl items-center flex flex-col`}
           >
-            <div className="flex flex-col">
-              <b>Nama:</b> {result.namaOrang}
-            </div>
-            <div className="flex flex-col">
-              <b>Khodam:</b> {result.kodam}
-            </div>
-            <div className="flex flex-col">
-              <b>Arti:</b> {result.arti}
+            <h1 className="text-5xl font-extrabold text-red-600 uppercase caveat-brush-regular my-10">
+              Cek Khodam
+            </h1>
+            <div className="animate-bounce flex items-center">
+              <Icon icon="line-md:moon-rising-alt-loop" className="mr-1" />{" "}
+              {mencariKodam}
             </div>
           </div>
+
+          <ResultComponent result={result} setResult={setResult} />
         </div>
       ) : (
-        <div className="flex flex-col font-bold text-lg">
-          Input username terlebih dahulu:
-          <input
-            type="text"
-            className="border outline-none rounded-md p-2 my-1"
-            onChange={(e) => setUsernameTiktok(e.target.value)}
-          ></input>
-          <button
-            onClick={() => setPanel(true)}
-            className="border-2 rounded px-3 py-1 my-2 text-black border-black bg-red-800 hover:bg-red-900"
-          >
-            MASUK KE CEK KODAM
-          </button>
-        </div>
+        <Intro setUsernameTiktok={setUsernameTiktok} setPanel={setPanel} />
       )}
+
       <Social />
     </main>
   );
