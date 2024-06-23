@@ -4,11 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Cek Kodam",
-  description: "Tiktok Live Cek Kodam",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

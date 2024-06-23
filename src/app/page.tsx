@@ -1,12 +1,12 @@
 import MainPage from "@/components/Page/Main";
-import { Redis } from "@upstash/redis";
+import { Metadata } from "next";
 
 export default async function Home() {
-  let views: any = false;
-  try {
-    const redis = Redis.fromEnv();
-
-    views = await redis.mget<number[]>("pageviews-khodam");
-  } catch (err) {}
-  return <MainPage totalViews={views[0]} />;
+  return <MainPage />;
 }
+
+export const metadata: Metadata = {
+  title: "Cek",
+  description:
+    "Cek apapun dengan aplikasi kami! Temukan kekuatan dan karakter unik yang tersembunyi dalam diri Anda. aplikasi kami membantu Anda mengungkap identitas spiritual dan masa depan Anda.",
+};

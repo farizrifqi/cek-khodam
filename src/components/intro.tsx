@@ -1,7 +1,9 @@
+import GlowingText from "./view/glowing";
+
 export default function Intro({ setUsernameTiktok, setPanel }: any) {
   return (
     <div className="flex flex-col font-bold text-lg">
-      Input username jika sedang streaming:
+      <GlowingText text="Username Tiktok" size="3xl" />
       <input
         type="text"
         className="border outline-none rounded-md p-2 my-1"
@@ -10,7 +12,7 @@ export default function Intro({ setUsernameTiktok, setPanel }: any) {
       ></input>
       <button
         onClick={() => setPanel(true)}
-        className="border-2 rounded px-3 py-1 my-2 text-black border-black bg-red-800 hover:bg-red-900"
+        className="border-2 rounded px-3 py-1 my-2 text-black border-black bg-white bg-opacity-5 hover:bg-opacity-10"
       >
         MASUK KE CEK KODAM
       </button>

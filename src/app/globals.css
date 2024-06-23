@@ -3,10 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
 
-body {
+/* body {
   background: url("/bg-1.png") no-repeat;
   background-size: cover;
-}
+} */
 
 h1 {
   @apply text-3xl font-bold;
