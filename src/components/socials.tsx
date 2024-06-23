@@ -6,6 +6,7 @@ export function Social() {
       <a
         href="https://tiktok.com/@sosokidola"
         className="flex flex-row items-center gap-0.5 hover:text-red-100 transition-colors"
+        target="_blank"
       >
         <Icon icon="simple-icons:tiktok" className="text-xs" />
         sosokidola
@@ -13,6 +14,7 @@ export function Social() {
       <a
         href="https://instagram.com/@frz.ra"
         className="flex flex-row items-center gap-0.5 hover:text-red-100 transition-colors"
+        target="_blank"
       >
         <Icon icon="akar-icons:instagram-fill" />
         frz.ra
@@ -20,6 +22,7 @@ export function Social() {
       <a
         href="https://twitter.com/@zeranel"
         className="flex flex-row items-center gap-0.5 hover:text-red-100 transition-colors"
+        target="_blank"
       >
         <Icon icon="akar-icons:x-fill" className="social-link" />
         zeraneL
