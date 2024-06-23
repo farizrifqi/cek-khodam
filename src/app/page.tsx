@@ -45,7 +45,7 @@ export default function Home() {
     } else {
       if (phase == 3) {
         let kodamTerpilih =
-          kodam[Math.floor(Math.random() * kodam.length + 30)] ??
+          kodam[Math.floor(Math.random() * kodam.length + 100)] ??
           kodam[kodam.length - 1];
         setResult({
           namaOrang: nama,
