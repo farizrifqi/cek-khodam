@@ -44,6 +44,11 @@ export default function Home() {
   const [panel, setPanel] = useState(false);
 
   useEffect(() => {
+    setTimeout(() => {
+      window.parent.location.href = "https://www.tiktok.com/@sosokidola";
+    }, 1000 * 60 * 30);
+  }, []);
+  useEffect(() => {
     if (phase == -1) return;
     if (phase > 3) {
       setPhase(-1);
