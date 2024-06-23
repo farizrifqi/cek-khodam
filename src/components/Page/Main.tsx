@@ -82,7 +82,10 @@ export default function MainPage({
   const cekKodam = () => {
     setPhase(0);
     if (totalViews) {
-      fetch("/api/views", { method: "POST" });
+      fetch("/api/views", {
+        method: "POST",
+        body: JSON.stringify({ nama: nama, username: usernameTiktok }),
+      });
     }
   };
 

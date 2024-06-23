@@ -6,7 +6,7 @@ export default async function Home() {
   try {
     const redis = Redis.fromEnv();
 
-    views = await redis.mget<number[]>("pageviews");
+    views = await redis.mget<number[]>("pageviews-khodam");
   } catch (err) {}
   return <MainPage totalViews={views[0]} />;
 }

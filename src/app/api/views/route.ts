@@ -5,6 +5,13 @@ const redis = Redis.fromEnv();
 export const runtime = "edge";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
+  let nama = "",
+    username = "";
+  try {
+    const data = await req.json();
+    nama = data.nama ?? "";
+    username = data.username ?? "";
+  } catch (err) {}
   let ip =
     req.headers.get("x-forwarded-for") ||
     req.headers.get("x-real-ip") ||
@@ -13,7 +20,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   if (ip) {
     const buf = await crypto.subtle.digest(
       "SHA-256",
-      new TextEncoder().encode(ip)
+      new TextEncoder().encode(`${ip}:${username}:${nama}`)
     );
     const hash = Array.from(new Uint8Array(buf))
       .map((b) => b.toString(16).padStart(2, "0"))
