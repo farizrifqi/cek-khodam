@@ -148,7 +148,7 @@ export default function MainPage({
       )}
       {totalViews && (
         <div className=" text-center font-semibold border rounded-md text-white border-white text-xs px-3 py-1 my-5">
-          {totalViews}x mengecek kodam.
+          {totalViews}x mengecek kodam
         </div>
       )}
       <Social />
