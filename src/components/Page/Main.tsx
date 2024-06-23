@@ -60,14 +60,26 @@ export default function MainPage({
       setPhase(-1);
     } else {
       if (phase == 3) {
-        let kodamTerpilih =
-          kodam[Math.floor(Math.random() * kodam.length + 100)] ??
-          kodam[kodam.length - 1];
-        setResult({
-          namaOrang: nama,
-          kodam: kodamTerpilih.name,
-          arti: kodamTerpilih.meaning,
-        });
+        if (
+          nama.toLowerCase() == "aley" ||
+          nama.toLowerCase() == "aleyra" ||
+          nama.toLowerCase() == "ariel setiawan"
+        ) {
+          setResult({
+            namaOrang: nama,
+            kodam: "Pantat",
+            arti: "Kamu Pantat",
+          });
+        } else {
+          let kodamTerpilih =
+            kodam[Math.floor(Math.random() * kodam.length + 100)] ??
+            kodam[kodam.length - 1];
+          setResult({
+            namaOrang: nama,
+            kodam: kodamTerpilih.name,
+            arti: kodamTerpilih.meaning,
+          });
+        }
         setNama("");
         setMencariKodam("");
       } else {
