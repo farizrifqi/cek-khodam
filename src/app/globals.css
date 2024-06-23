@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
 
 body {
   background: url("/bg-1.png") no-repeat;
@@ -13,7 +13,7 @@ h1 {
 }
 
 .caveat-brush-regular {
-  font-family: "Caveat Brush", sans-serif;
+  font-family: "Caveat Brush", Consolas, "Andale Mono", "Ubuntu Mono", monospace;
   font-weight: 90000;
   font-style: bold;
 }

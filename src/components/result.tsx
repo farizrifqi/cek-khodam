@@ -1,5 +1,8 @@
 import { resultKhodam } from "@/app/page";
-
+import localFont from "next/font/local";
+const caveatbrush = localFont({
+  src: "../fonts/CaveatBrush-Regular.ttf",
+});
 export default function ResultComponent({
   result,
   setResult,
@@ -19,7 +22,9 @@ export default function ResultComponent({
         <div className="flex flex-col text-lg font-semibold">
           {result.namaOrang}
         </div>
-        <div className="flex flex-col lg:text-6xl text-4xl text-red-700 font-extrabold my-5">
+        <div
+          className={`${caveatbrush.className} flex flex-col lg:text-6xl text-4xl text-red-700 font-extrabold my-5`}
+        >
           <b>{result.kodam}</b>
         </div>
         <div className="flex flex-col text-base">{result.arti}</div>

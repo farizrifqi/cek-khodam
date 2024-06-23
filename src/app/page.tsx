@@ -7,6 +7,11 @@ import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import ResultComponent from "@/components/result";
 import PanelKodam from "@/components/panel";
 import Intro from "@/components/intro";
+import localFont from "next/font/local";
+const protestriot = localFont({
+  src: "../fonts/ProtestRiot-Regular.ttf",
+});
+
 export type resultKhodam = {
   namaOrang?: string;
   kodam?: string;
@@ -85,12 +90,13 @@ export default function Home() {
               {usernameTiktok}
             </div>
           </div>
-
+          <h1
+            className={`bg-gradient-to-r from-black to-red-900 inline-block text-transparent bg-clip-text text-5xl lg:text-7xl ${protestriot.className} font-extrabold my-5 tracking-wider text-center`}
+          >
+            CEK KHODAM
+          </h1>
           {!result?.namaOrang && !mencariKodam && (
             <>
-              <h1 className="text-5xl font-extrabold text-red-600 uppercase caveat-brush-regular my-5">
-                Cek Khodam
-              </h1>
               <PanelKodam setNama={setNama} nama={nama} cekKodam={cekKodam} />
             </>
           )}
@@ -100,9 +106,6 @@ export default function Home() {
               !mencariKodam && "hidden"
             }  text-xl lg:text-3xl items-center flex flex-col`}
           >
-            <h1 className="text-5xl font-extrabold text-red-600 uppercase caveat-brush-regular my-10">
-              Cek Khodam
-            </h1>
             <div className="animate-bounce flex items-center">
               <Icon icon="line-md:moon-rising-alt-loop" className="mr-1" />{" "}
               {mencariKodam}

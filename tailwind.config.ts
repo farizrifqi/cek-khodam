@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         caveatbrush: ["Caveat Brush", ...fontFamily.sans],
+        protestriot: ["Protest Riot", ...fontFamily.sans],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
