@@ -1,5 +1,5 @@
-import { resultKhodam } from "@/app/page";
 import localFont from "next/font/local";
+import { resultKhodam } from "./Page/Main";
 const caveatbrush = localFont({
   src: "../fonts/CaveatBrush-Regular.ttf",
 });
