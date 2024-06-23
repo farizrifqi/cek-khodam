@@ -1,7 +1,7 @@
 export default function Intro({ setUsernameTiktok, setPanel }: any) {
   return (
     <div className="flex flex-col font-bold text-lg">
-      Input username terlebih dahulu:
+      Input username jika sedang streaming:
       <input
         type="text"
         className="border outline-none rounded-md p-2 my-1"
