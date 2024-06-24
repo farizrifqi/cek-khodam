@@ -4,7 +4,7 @@ export default function InputPartner({ nama, setNama, setCari }: any) {
       <input
         type="text"
         className="border-b border-white rounded-lg outline-none bg-transparent px-3 py-1.5 text-lg lg:text-2xl font-semibold"
-        placeholder="Masukkan Username"
+        placeholder="Username Tiktok"
         value={nama}
         onChange={(e) => setNama(e.target.value)}
       />
