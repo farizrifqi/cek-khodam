@@ -1,9 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const CountUpAnimation = ({ initialValue, targetValue }: any) => {
+const CountUpAnimation = ({
+  initialValue,
+  targetValue,
+  duration,
+}: {
+  initialValue: number;
+  targetValue: number;
+  duration?: number;
+}) => {
   const [count, setCount] = useState(initialValue);
-  const duration = 4000; // 4 seconds
+  if (!duration) duration = 4000; // 4 seconds
 
   useEffect(() => {
     let startValue = initialValue;

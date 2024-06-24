@@ -74,6 +74,7 @@ export default function PartnerPage() {
               <CountUpAnimation
                 initialValue={0}
                 targetValue={partnerData.match}
+                duration={2000}
               />
             )}
           </div>
@@ -82,7 +83,11 @@ export default function PartnerPage() {
             {partnerData.p == 0 ? (
               "0"
             ) : (
-              <CountUpAnimation initialValue={0} targetValue={partnerData.p} />
+              <CountUpAnimation
+                initialValue={0}
+                targetValue={partnerData.p}
+                duration={2000}
+              />
             )}
           </div>
           <div className="flex flex-row gap-0.5 items-center">
@@ -90,7 +95,11 @@ export default function PartnerPage() {
             {partnerData.w == 0 ? (
               "0"
             ) : (
-              <CountUpAnimation initialValue={0} targetValue={partnerData.w} />
+              <CountUpAnimation
+                initialValue={0}
+                targetValue={partnerData.w}
+                duration={2000}
+              />
             )}
           </div>
         </div>
